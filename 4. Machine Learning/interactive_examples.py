@@ -12,6 +12,37 @@ newcolors = np.vstack((top(np.linspace(0, 1, 128)),
                        bottom(np.linspace(0, 1, 128))))
 newcmp = ListedColormap(newcolors, name='OrangeBlue')
 
+# import numpy as np
+# N = 150
+# alpha = 2 * np.pi * np.random.uniform(size=N)
+# r = np.random.normal(4, .5, N)
+
+# class_inner_x = np.random.normal(0, .75, N)
+# class_inner_y = np.random.normal(0, .75, N)
+# class_outer_x = r*np.cos(alpha)
+# class_outer_y = r*np.sin(alpha)
+# class_inner = (class_inner_x, class_inner_y)
+# class_outer = (class_outer_x, class_outer_y)
+
+# df = pd.DataFrame()
+# df['x'] = np.vstack([np.array(class_inner).T, np.array(class_outer).T])[:, 0]
+# df['y'] = np.vstack([np.array(class_inner).T, np.array(class_outer).T])[:, 1]
+# df['class'] = np.append(np.ones(N), np.zeros(N))
+# df.to_csv('circle_data.csv')
+
+
+# from sklearn.datasets import load_iris
+# import pandas as pd
+# import numpy as np
+
+# data = load_iris()
+# df = pd.DataFrame(
+#     columns=['species', 'sepal length in cm', 'sepal width in cm', 'petal length in cm', 'petal width in cm'],
+#     data=np.concatenate([np.array(data.target).reshape(-1, 1), np.array(data.data)], axis=1)
+# )
+# df['species'] = np.where(df['species'] == 0, 'Iris-Setosa', np.where(df['species'] == 1, 'Iris-Versicolour', 'Iris-Virginica'))
+# df.to_csv('iris_dataset.csv')
+
 
 x = np.linspace(-5, 5)
 y = np.random.normal(.6*x+1)
@@ -26,10 +57,10 @@ class_2 = (class_2_x, class_2_y)
 
 
 alpha = 2 * np.pi * np.random.uniform(size=N)
-r = np.random.normal(3, .5, N)
+r = np.random.normal(4, .5, N)
 
-class_inner_x = np.random.normal(0, 1, N)
-class_inner_y = np.random.normal(0, 1, N)
+class_inner_x = np.random.normal(0, .75, N)
+class_inner_y = np.random.normal(0, .75, N)
 x_outer = np.linspace(-2, 2, N)
 class_outer_x = r*np.cos(alpha)
 class_outer_y = r*np.sin(alpha)
